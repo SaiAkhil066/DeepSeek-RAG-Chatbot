@@ -17,28 +17,28 @@ This chatbot enables **fast, accurate, and explainable retrieval of information*
 
 ---
 ## **Upcoming Features**
- # You can select a model from the UI interface (any Ollama model).
+ ## You can select a model from the UI interface (any Ollama model).
 
 Example: Users can choose between models like mistral, gemma, or llama3 from a dropdown menu.
-# The chat section suggests relevant questions based on the document.
+## The chat section suggests relevant questions based on the document.
 
 Example: If the document is about "Machine Learning Basics," suggested questions could be:
 What is supervised learning?
 How does gradient descent work?
 What are the common evaluation metrics for ML models?
-# Different pipelines are available for various RAG (Retrieval-Augmented Generation) methods.
+## Different pipelines are available for various RAG (Retrieval-Augmented Generation) methods.
 
 Example:
 Basic RAG Pipeline: Uses FAISS for retrieval and a simple prompt format.
 Advanced RAG Pipeline: Uses ChromaDB with metadata filtering for more precise document retrieval.
 
-# Different data stores and similarity search techniques are used.
+## Different data stores and similarity search techniques are used.
 
 Example:
 Data Stores: PostgreSQL, Pinecone, Weaviate, ChromaDB.
 Similarity Search Techniques: Cosine similarity, Euclidean distance, Jaccard similarity.
   
-# *Installation & Setup**
+## *Installation & Setup**
 
 You can install and run the **DeepSeek RAG Chatbot** in one of two ways:
 
