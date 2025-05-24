@@ -12,7 +12,7 @@ load_dotenv(find_dotenv())  # Loads .env file contents into the application base
 
 OLLAMA_BASE_URL = os.getenv("OLLAMA_API_URL", "http://localhost:11434")
 OLLAMA_API_URL = f"{OLLAMA_BASE_URL}/api/generate"
-MODEL= os.getenv("MODEL", "deepseek-r1:7b")                                                      #Make sure you have it installed in ollama
+MODEL= os.getenv("MODEL", "huihui-ai/Qwen3-1.7B-abliterated")                                                      #Make sure you have it installed in ollama
 EMBEDDINGS_MODEL = "nomic-embed-text:latest"
 CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
