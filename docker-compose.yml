@@ -13,7 +13,7 @@ services:
     # Or define them inline:
     environment:
       - OLLAMA_API_URL=http://host.docker.internal:11434
-      - MODEL=deepseek-r1:7b
+      - MODEL=huihui-ai/Qwen3-1.7B-abliterated
       - EMBEDDINGS_MODEL=nomic-embed-text:latest
       - CROSS_ENCODER_MODEL=cross-encoder/ms-marco-MiniLM-L-6-v2
 

@@ -40,14 +40,52 @@ Similarity Search Techniques: Cosine similarity, Euclidean distance, Jaccard sim
   
 ## *Installation & Setup**
 
-You can install and run the **DeepSeek RAG Chatbot** in one of two ways:
+There are a few ways to install and run the **DeepSeek RAG Chatbot**:
 
-1. **Traditional (Python/venv) Installation**  
-2. **Docker Installation** (ideal for containerized deployments)
+1. **Simplified Installation (Recommended using `install.sh`)**
+2. **Traditional (Manual Python/venv) Installation**
+3. **Docker Installation** (ideal for containerized deployments)
 
 ---
 
-## **1️⃣ Traditional (Python/venv) Installation**
+## **1️⃣ Simplified Installation (Recommended using `install.sh`)**
+
+This is the easiest way to get started. The `install.sh` script automates the setup process.
+
+1.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/SaiAkhil066/DeepSeek-RAG-Chatbot.git
+    cd DeepSeek-RAG-Chatbot
+    ```
+
+2.  **Run the Installation Script:**
+    Make sure the script is executable, then run it:
+    ```bash
+    chmod +x install.sh
+    ./install.sh
+    ```
+    This script will:
+    *   Check for Ollama and install it if it's not found.
+    *   Install Python dependencies from `requirements.txt`.
+    *   Create or update a `.env` file with the necessary environment variables, including the model `huihui-ai/Qwen3-1.7B-abliterated`.
+    *   Pull the specified Ollama model.
+
+3.  **Activate Environment Variables:**
+    After the script completes, source the `.env` file to load the environment variables into your current shell session:
+    ```bash
+    source .env
+    ```
+
+4.  **Run the Chatbot:**
+    Launch the Streamlit app:
+    ```bash
+    streamlit run app.py
+    ```
+    Open your browser at **[http://localhost:8501](http://localhost:8501)** to access the chatbot UI.
+
+---
+
+## **2️⃣ Traditional (Manual Python/venv) Installation**
 
 ### **Step A: Clone the Repository & Install Dependencies**
 ```
@@ -74,10 +112,10 @@ pip install -r requirements.txt
 1. **Download Ollama** → [https://ollama.com/](https://ollama.com/)  
 2. **Pull the required models**:
    ```
-   ollama pull deepseek-r1:7b
+   ollama pull huihui-ai/Qwen3-1.7B-abliterated 
    ollama pull nomic-embed-text
    ```
-   *Note: If you want to use a different model, update `MODEL` or `EMBEDDINGS_MODEL` in your environment variables or `.env` file accordingly.*
+   *Note: The `install.sh` script handles model pulling automatically. If installing manually and you want to use a different model, update `MODEL` or `EMBEDDINGS_MODEL` in your environment variables or create a `.env` file accordingly.*
 
 ### **Step C: Run the Chatbot**
 1. Make sure **Ollama** is running on your system:
@@ -125,7 +163,7 @@ services:
       - "8501:8501"
     environment:
       - OLLAMA_API_URL=http://ollama:11434
-      - MODEL=deepseek-r1:7b
+      - MODEL=huihui-ai/Qwen3-1.7B-abliterated
       - EMBEDDINGS_MODEL=nomic-embed-text:latest
       - CROSS_ENCODER_MODEL=cross-encoder/ms-marco-MiniLM-L-6-v2
     depends_on:
