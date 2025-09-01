@@ -10,6 +10,8 @@ from dotenv import load_dotenv, find_dotenv
 torch.classes.__path__ = [os.path.join(torch.__path__[0], torch.classes.__file__)]  # Fix for torch classes not found error
 load_dotenv(find_dotenv())  # Loads .env file contents into the application based on key-value pairs defined therein, making them accessible via 'os' module functions like os.getenv().
 
+st.set_page_config(page_title="DeepGraph RAG-Pro", layout="wide")      # ✅ Streamlit configuration
+
 OLLAMA_BASE_URL = os.getenv("OLLAMA_API_URL", "http://localhost:11434")
 OLLAMA_API_URL = f"{OLLAMA_BASE_URL}/api/generate"
 MODEL= os.getenv("MODEL", "huihui-ai/Qwen3-1.7B-abliterated")                                                      #Make sure you have it installed in ollama
@@ -23,9 +25,6 @@ try:
     reranker = CrossEncoder(CROSS_ENCODER_MODEL, device=device)
 except Exception as e:
     st.error(f"Failed to load CrossEncoder model: {str(e)}")
-
-
-st.set_page_config(page_title="DeepGraph RAG-Pro", layout="wide")      # ✅ Streamlit configuration
 
 # Custom CSS
 st.markdown("""
